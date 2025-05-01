@@ -1,0 +1,884 @@
+body{
+    margin: 0;
+
+
+    background-image: url('../img/fundo2.png');
+    background-size: cover; /* ou "contain", dependendo do efeito desejado */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;   
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.inicio{
+    position: relative;
+    text-align: left;
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;   
+}
+
+.textos{
+    background-color: black;
+    width: 700px;
+    height: 300px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.fe{
+    font-family: "Jura", sans-serif;
+    margin: 0;
+    color: white;
+}
+
+.inicio p{
+    font-size: 36px;
+    margin-bottom: -25px;
+}
+
+.inicio h1{
+    margin: 0;
+    font-size: 110px;
+    font-family: "Actor", sans-serif;
+    color: white;
+    font-weight: 200;
+}
+
+.linha-front h3{
+    font-size: 85px;
+    margin-top: -30px;
+    font-weight: 200;
+}
+
+.imagens{
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    width: 240px;
+    margin-top: -15px;
+    margin-left: 20px;
+}
+
+.linha-front {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.imagens img {
+    width: 64px;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.imagens img:hover {
+    border-radius: 30px;
+    transform: rotateX(15deg) scale(1.08) translateZ(10px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2), 
+                0 0 10px rgba(0, 255, 255, 0.3), 
+                0 0 20px rgba(0, 255, 255, 0.2);
+    filter: brightness(2.0) saturate(1.5);
+    z-index: 10;
+}
+
+.codigos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none; /* pra não atrapalhar clicar nos botões */
+}
+
+.codigos-move {
+    display: flex;
+    gap: 50px;
+    animation: moverCodigos 30s linear infinite;
+}
+
+.codigos span {
+    font-family: 'Fira Code', 'Courier New', monospace;
+    color: #279e2b;
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+/* Animação */
+@keyframes moverCodigos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.botoes {
+    display: flex;
+    gap: 16px;
+    width: 500px;
+    justify-content: space-between;
+}
+
+.botoes button {
+    position: relative;
+    width: 200px;
+    border-radius: 20px;
+    font-family: 'Jura', sans-serif;
+    font-size: 20px;
+    padding: 12px 24px;
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+.botoes button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    background-color: white;
+    z-index: 0;
+    transition: width 0.5s ease;
+}
+
+.botoes button:hover::before {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+.botoes button:hover {
+    color: black;
+}
+
+.botoes button span {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* INICIO PÁGINA DOIS */
+
+
+.container{
+    background-color: transparent;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.container h1{
+    margin: 0;
+    font-size: 80px;
+    font-family: "Jura", sans-serif;
+    color: white;
+    font-weight: 700;    
+}
+
+.projetos{
+    width: 100%;
+    height: 900px;
+    margin-top:-22px;
+    text-align: center;
+}
+
+.cards-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    justify-items: center;
+}
+
+.card-projeto {
+    background-color: #868686;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,1.1);
+    transition: transform 0.3s ease;
+    width: 70%;
+    max-width: 300px;
+    margin: 5px, 5px, 5px, 5px;
+}
+
+.notebook{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-projeto:hover {
+    transform: scale(1.05);
+}
+
+.logos{
+    width: 40px;
+    height: auto;
+}
+
+.container p{
+    font-family: 'Jura', sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+/* Estilo geral da barra de rolagem */
+::-webkit-scrollbar {
+    width: 20px; /* largura da barra vertical */
+    height: 12px; /* altura da barra horizontal */
+}
+
+/* Fundo da barra */
+::-webkit-scrollbar-track {
+background: #949494;
+border-radius: 10px;
+}
+
+/* Alça (parte que você arrasta) */
+::-webkit-scrollbar-thumb {
+background-color: #484848;
+border-radius: 10px;
+border: 1px solid #f0f0f0;
+}
+
+/* Alça ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+background-color: #555;
+}
+
+.container-2{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, transparent, black);
+    opacity: 1.0;
+    padding-top: 30px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center; /* centraliza o título */
+}
+
+.container-2 h1{
+    font-family: "Jura", sans-serif;
+    text-align: center;
+    font-size: 60px;
+    color: white;
+}
+
+.skils{
+    width: 400px;
+    height: 460px;
+    background-color: transparent;
+    margin-left: 10px;
+    display: block;
+    border: 2px solid white;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.skils h1{
+    font-family: "Jura", sans-serif;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+.skils img:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.logo2{
+    width: 100px;
+}
+
+.eu{
+    right: 0;
+    background-color: transparent;
+    width: 80%;
+    height: auto;
+    border: 2px solid white;
+    border-radius: 25px;
+}
+
+.eu h1{
+    font-family: "Jura", sans-serif;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+.sobre-conteudo {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 40px;
+    z-index: 10;
+}
+
+.inside-eu{
+    background-color: transparent;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: flex-start ;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+.image-me{
+    width: 300px;
+    height: auto;
+    margin-left: -30px;
+}
+
+.icones{
+    width: 40px;
+    height: auto;
+}
+
+.container-icones{
+    background-color: transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px; /* espaço entre os pares */
+    margin-left: 20px; /* opcional, afasta dos cantos */
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* espaço entre ícone e texto */
+    text-align: left;
+}
+
+.info p{
+    font-family: "Jura", sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.soft{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, transparent, black);
+    opacity: 0.8;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 10px;
+    padding-bottom: 80px;
+}
+
+.inside{
+    background-color: transparent;
+    width: 700px;
+    height: auto;
+    margin-top: 20px;
+    border: 2px solid white;
+    border-radius: 25px;
+    margin-right: 123px;
+    margin-top: 30px;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.icons p{
+    font-family: "Jura", sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.icons img{
+    width: 35px;
+}
+
+.inside h1{
+    margin-bottom: -10px;
+}
+
+.formulario{
+    width: 400px;
+    height: 400px;
+    background-color: transparent;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-left: 140px;
+    border-radius: 25px;
+    border: 2px solid white;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    position: relative;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 12px 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    background: transparent;
+    font-family: 'Jura', sans-serif;
+    color: white;
+}
+
+label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    background: transparent;
+    padding: 0 4px;
+    color: white;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    font-family: 'Jura', sans-serif;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    top: -15px;
+    left: 10px;
+    font-size: 12px;
+    color: white;
+    background: transparent;
+    font-family: 'Jura', sans-serif;
+}
+
+.formulario button {
+    padding: 10px 16px;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 300px;
+    font-family: 'Jura', sans-serif;
+    font-weight: 600;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.formulario button:hover {
+    background: #1ebe5d;
+}
+
+.formulario h2{
+    font-family: 'Jura', sans-serif;
+    font-size: 30px;
+    color: white;
+}
+
+.formulario img{
+    width: 30px;
+    align-self: center;
+}
+
+.formulario p{
+    font-family: 'Jura', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+#btn2{
+    padding: 10px 16px;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 270px;
+    font-family: 'Jura', sans-serif;
+    font-weight: 600;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-self: center;
+    text-decoration: none;
+}
+
+#btn2:hover{
+    background: rgb(100, 100, 252);
+}
+
+.rodape{
+    background-color: black;
+    width: 100%;
+    height: 90px;
+    color: rgb(162, 162, 162);
+    font-family: 'Jura', sans-serif;
+}
+/* 
+RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+    .textos{
+        width: 60%;
+        height: 200px;
+    }
+
+    .textos p{
+        font-size: 26px;
+    }
+
+    .textos h1{
+        font-size: 80px;
+    }
+
+    .textos img{
+        width: 50px;
+    }
+
+    .linha-front h3{
+        font-size: 50px;
+    }
+
+    .imagens{
+        width: 180px;
+    }
+
+    .botoes button{
+        width: 180px;
+        font-size: 16px;
+    }
+    .container {
+        width: 100%;
+        padding: 0 1rem;
+        margin-top: 40px;
+    }
+
+    .container h1 {
+        font-size: 60px;
+    }
+
+    .container p {
+        font-size: 14px;
+    }
+
+    .cards-projetos {
+        gap: 1.0rem;
+        padding: 0.8rem;
+    }
+
+    .card-projeto {
+        max-width: 70%;
+    }
+
+    .logos {
+        width: 30px;
+    }
+
+    .container-2{
+        width: 100%;
+    }
+
+    .sobre-conteudo{
+        gap: -100px;
+    }
+
+    .skils{
+        width: 40%;
+        height: 400px;
+        margin-left: 30px;
+    }
+    .skils img{
+        width: 70px;
+    }
+
+    .eu{
+        width: 400px;
+        margin-right: 20px;
+    }
+
+    .inside-eu{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        align-items: center;
+    }
+
+    .eu h1{
+        margin-bottom: 10px;
+    }
+
+    .eu p{
+        font-size: 13px;
+    }
+    .info img{
+        width: 40px;
+    }
+
+    .image-me{
+        width: auto;
+        height: 100px;
+    }
+
+    .container-icones{
+        margin-left: 30px;
+        width: 90%;
+    }
+
+    .container-icones img{
+        width: 30px;
+    }
+
+    .info{
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    body{
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    .soft{
+        margin-top: 50px;
+        justify-content: space-between;
+    }
+
+    .formulario{
+        margin-left: 40px;
+        margin-top: 0;
+    }
+
+    .inside{
+        margin-right: 50px;
+        width: 300px;
+    }
+
+    .inside h1{
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .inside p{
+        font-size: 18px;
+    }
+
+    .formulario{
+        width: 40%;
+    }
+
+    .formulario button{
+        width: 280px;
+    }
+
+    #whatsappForm{
+        margin-top: 40px;
+    }
+
+    #botao{
+        margin-bottom: 20px;
+    }
+
+    .formulario p{
+        margin-bottom: 30px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .icons{
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 460px){
+    .inicio{
+        background-color: black;
+        width: 100%;
+    }
+    .inicio p{
+        font-size: 20px;
+    }
+
+    .inicio h1{
+        font-size: 50px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .inicio h3{
+        font-size: 35px;
+    }
+
+    .imagens img{
+        width: 40px;
+    }
+
+    .textos{
+        width: 90%;
+    }
+
+    .botoes{
+        width: 80%;
+        margin-top: -20px;
+    }
+
+    .botoes button{
+        font-size: 14px;
+    }
+
+    .container h1{
+        font-size: 50px;
+    }
+    .card-projeto{
+        width: 100%;
+        padding: 0rem;
+    }
+
+    .logos{
+        width: 20px;
+    }
+
+    .cards-projetos{
+        grid-template-columns: repeat(2, 1fr); /* duas colunas de mesmo tamanho */
+        gap: 1rem;
+        padding: 0rem;
+        padding-top: 1rem;
+    }
+
+    #sobremim{
+        font-size: 40px;
+    }
+
+    .skils{
+        margin: 0;
+    }
+
+    .sobre-conteudo{
+        gap: 1rem;
+    }
+
+    .skils img{
+        width: 50px;
+    }
+
+    .skils h1{
+        font-size: 30px;
+    }
+
+    .eu h1{
+        font-size: 30px;
+    }
+
+    
+    .eu{
+        width: 50%;
+    }
+
+    .container-icones{
+        margin-left: 0;
+    }
+    .container-icones p{
+        font-size: 12px;
+    }
+
+    .container-icones img{
+        width: 25px;
+    }
+
+    .image-me{
+        margin: 0 auto;
+    }
+
+    .inside-eu{
+        
+    }
+
+    .soft{
+        margin-top: 10px;
+        flex-direction: column-reverse;
+    }
+
+    #whatsappForm{
+        width: 100%;
+    }
+
+    .formulario{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .formulario button{
+        font-size: 20px;
+        width: 90%;
+        margin: 0 auto;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .formulario button img{
+        width: 30px;
+    }
+
+    .inside{
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 90%;
+    }
+
+    .inside p{
+        font-size: 17px;
+    }
+
+    .icons{
+        margin-bottom: 20px;
+    }
+
+    .formulario label{
+        padding-left: 30px;
+    }
+
+    .rodape{
+        height: 40px;
+    }
+}
